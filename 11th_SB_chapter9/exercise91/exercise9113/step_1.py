@@ -33,7 +33,7 @@ class ExerciseAnswer9113(Scene):
         arrow_3=Arrow(DOWN*2,UP*3,color="#6A0B37",stroke_width=3,tip_length=0.25).shift(DOWN*1.8+RIGHT*1.4).scale(0.2)
         label_1=MathTex("1^{-}",color=BLACK,font_size=30)
         label_2=MathTex("1^{+}",color=BLACK,font_size=30)
-        label_3=MathTex("y=\\sin(\\pi x)",color=BLACK,font_size=35).next_to(axes.c2p(0.5,1),UP*0.2)
+        label_3=MathTex("y=\\sin\\pi x",color=BLACK,font_size=35).next_to(axes.c2p(0.5,1),UP*0.2)
 
         label_1.next_to(arrow_1.get_end(),LEFT*1.5+DOWN*0.6)
         label_2.next_to(arrow_2.get_end(),RIGHT*1.5+DOWN*0.6)
