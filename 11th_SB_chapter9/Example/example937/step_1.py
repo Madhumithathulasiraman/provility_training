@@ -12,7 +12,7 @@ class Example937(Scene):
     def construct(self):
 
         # Axes
-        axes=Axes(x_range=[-20, 130, 10],y_range=[-9, 26, 2],y_length=9,axis_config={"color":BLACK, "stroke_width": 4},x_axis_config={"include_ticks": False},tips=False)
+        axes=Axes(x_range=[-20, 130, 10],y_range=[-9, 26, 2],y_length=9,axis_config={"color":BLACK, "stroke_width": 4,"tick_size": 0.06},x_axis_config={"include_ticks": False},tips=False)
         axes.x_axis.add_tip(tip_length=0.35, tip_width=0.25)
         axes.y_axis.add_tip(tip_length=0.35, tip_width=0.25)
         labels1=axes.get_axis_labels(MathTex("x",color=BLACK))
