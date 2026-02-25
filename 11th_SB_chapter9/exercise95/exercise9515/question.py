@@ -7,12 +7,12 @@ config.frame_width=20
 class FourGraphs(Scene):
     def construct(self):
 
-        # ---------------- GRAPH 1 (Question Image 1) ----------------
+        # ----------------GRAPH 1----------------
         q_image1 = ImageMobject("question1.png").scale(0.6)
         graph1 = Group(q_image1)
 
 
-        # ---------------- GRAPH 2 ----------------
+        # ----------------GRAPH 2----------------
         axes1 = Axes(
             x_range=[-1, 8, 1],
             y_range=[-1, 6, 1],
@@ -50,7 +50,7 @@ class FourGraphs(Scene):
         graph2 = VGroup(axes1,x_label,y_label,zero,curve,v_line,open_dot,dot,dot2).scale(0.8)
 
 
-        # ---------------- GRAPH 3 ----------------
+        # ----------------GRAPH 3----------------
         axes2 = Axes(
             x_range=[-2.2, 5.8, 1],
             y_range=[-3.5,4, 1],
@@ -74,7 +74,7 @@ class FourGraphs(Scene):
             color="#9C2007"
         ).shift(RIGHT*0.1)
 
-        # Proper label grouping
+        
         x_labels = VGroup()
         y_labels = VGroup()
 
@@ -104,12 +104,12 @@ class FourGraphs(Scene):
         ).scale(0.8)
 
 
-        # ---------------- GRAPH 4 (Question Image 2) ----------------
+        # ----------------GRAPH 4----------------
         q_image2 = ImageMobject("question4.png").scale(0.6)
         graph4 = Group(q_image2)
 
 
-        # ---------------- ARRANGE 2×2 ----------------
+        
         all_graphs = Group(graph1, graph2, graph3, graph4)
         all_graphs.arrange_in_grid(rows=2, cols=2, buff=1)
         all_graphs.move_to(ORIGIN)
