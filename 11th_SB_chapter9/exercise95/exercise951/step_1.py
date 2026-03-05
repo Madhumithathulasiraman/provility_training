@@ -1,44 +1,33 @@
 from manim import *
 
-config.background_color = WHITE
-config.frame_width=15
+config.background_color=WHITE
 
-
-class ExactGraph(Scene):
+class Exercise951(Scene):
     def construct(self):
 
-        axes = Axes(x_range=[-3.9, 3.9, 1],y_range=[-1.9, 5, 1],x_length=11,y_length=8,axis_config={"color": BLACK,"stroke_width": 4,"include_ticks":True,"tick_size": 0.12,},tips=False).set_z_index(10)
-        axes.x_axis.add_tip(tip_length=0.35, tip_width=0.35)
-        axes.y_axis.add_tip(tip_length=0.35, tip_width=0.35)
-        axes.x_axis.tip.set_fill(BLACK)
-        axes.y_axis.tip.set_fill(BLACK)
-    
-        left_line = axes.plot(lambda x: -x - 2,x_range=[-4, -2],color="#9B09C8",stroke_width=4).shift(LEFT*0.1)
-        middle_line = axes.plot(lambda x:(4.5/3)*(x + 2),x_range=[-2.17,1],color="#9B09C8",stroke_width=4).shift(LEFT*0.06).scale(0.9)
-        right_line = axes.plot(lambda x: (x - 1),x_range=[1, 4],color="#F4930B",stroke_width=4).shift(LEFT*0.2)
-        middle_line2 = axes.plot(lambda x: -x + 1,x_range=[-3, 1],color="#F4930B",stroke_width=4).shift(LEFT*0.23)
-        dash1 = DashedLine(axes.c2p(-2, 0),axes.c2p(-2,3.6),dash_length=0.15,stroke_width=3,color="#27F5E0").shift(LEFT*0.08)
-        dash2 = DashedLine(axes.c2p(1, 0),axes.c2p(1, 4.3),dash_length=0.15,stroke_width=3,color="#27F5E0").shift(LEFT*0.22)
+        axes = Axes(x_range=[-4,4,1],y_range=[-6.9,6,1],x_length=8,y_length=6,axis_config={"color": BLACK,"include_ticks":False,"stroke_width": 3.5},tips=False)
+        axes.x_axis.add_tip()
+        axes.x_axis.add_tip(at_start=True)
+        axes.y_axis.add_tip()
+        axes.y_axis.add_tip(at_start=True)
 
-        self.add(axes, left_line, middle_line,middle_line2 ,right_line, dash1, dash2)
+        x_label = MathTex("x", color=BLACK).next_to(axes.x_axis.get_end(), RIGHT)
+        y_label = MathTex("y", color=BLACK).next_to(axes.y_axis.get_end(), UP)
+        x1_label = MathTex("x'", color=BLACK).next_to(axes.x_axis.get_start(), LEFT)
+        y1_label = MathTex("y'", color=BLACK).next_to(axes.y_axis.get_start(),DOWN)
+        graph = axes.plot(lambda x: 2*x**2 + 3*x - 5,x_range=[-3,1.8],color=BLUE)
 
-        x_labels = VGroup()
-        for x in range(-3,4):
-            if x != 0:
-                label = MathTex(str(x),color=BLACK)
-                label.scale(0.6)
-                label.next_to(axes.c2p(x,0) ,DOWN, buff=0.15)
-                x_labels.add(label)
-                self.add(axes, x_labels)
-        label1=MathTex("x",color=BLACK)
-        label1.next_to(axes.c2p(4.4,0),UP*0.1+LEFT*1)
-        label2=MathTex("y",color=BLACK)
-        label2.next_to(axes.c2p(0,4),UP*3.5+RIGHT*0.9)
-        label3=MathTex("|x+2|",color=BLACK,font_size=30)
-        label3.move_to(left_line)
-        label3.rotate(16*PI/9).shift(UP*0.3)
-        label4=MathTex("|x-1|",color=BLACK,font_size=30)
-        label4.move_to(right_line)
-        label4.rotate(PI/4).shift(UP*0.3)
+        
+        point1 = Dot(axes.c2p(-2.5,0), color="#F527CC")
+        point2 = Dot(axes.c2p(1,0), color="#F527CC")
+        point3 = Dot(axes.c2p(-0.75,-6.125),color="#F527CC")
+        point4 = Dot(axes.c2p(0,-5),color="#F527CC")
+        label1 = MathTex("(-2.5,0)", color=BLACK).scale(0.6).next_to(point1, DOWN*0.2+LEFT*0.3)
+        label2 = MathTex("(1,0)", color=BLACK).scale(0.6).next_to(point2, DOWN*0.2+RIGHT*0.3)
+        label3 = MathTex("(-0.75,-6.125)", color=BLACK).scale(0.6).next_to(point3, DOWN*0.2+LEFT*0.3)
+        label4 = MathTex("(0,-5)", color=BLACK).scale(0.6).next_to(point4, DOWN*0.1+RIGHT*0.2)
+        func_label = MathTex("f(x)=2x^2+3x-5", color=BLACK).shift(UP*2+RIGHT*1.20).scale(0.6)
+        func_label.rotate(PI/2.4)
+        text = MathTex(r"\text{Continuous for all } x \in \mathbb{R}",color=BLACK).scale(0.8).shift(UP+RIGHT*3.5)
 
-        self.add(label1,label2,label3,label4)
+        self.add(axes, x_label, y_label,x1_label,y1_label,graph,point1, point2, point3, point4,label1, label2,label3,label4,func_label,text)
