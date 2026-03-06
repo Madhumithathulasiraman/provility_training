@@ -13,18 +13,20 @@ class Exercise957(Scene):
         
      
 
-        axes = Axes(x_range=[-3.9, 7.9, 1],y_range=[-2.9, 4.9, 1],axis_config={"color": BLACK,"stroke_width":4},tips=False)
+        axes = Axes(x_range=[-3.9, 7.9, 1],y_range=[-2.9, 4.9, 1],axis_config={"color": BLACK,"stroke_width":3},tips=False)
         axes.x_axis.add_tip(tip_length=0.3, tip_width=0.3)
         axes.y_axis.add_tip(tip_length=0.3, tip_width=0.3)
         x_numbers=axes.x_axis.add_numbers(range(-3, 8), font_size=25,color=BLACK)
         y_numbers=axes.y_axis.add_numbers(range(-2, 5), font_size=25,color=BLACK)
+        
+        
         dashed_line = DashedLine(start=axes.c2p(2, 0),end=axes.c2p(2, 4),dash_length=0.1,color=BLACK)
         self.add(dashed_line)
         
         axes.x_axis.add_tip(at_start=True,tip_length=0.3, tip_width=0.3)
         axes.y_axis.add_tip(at_start=True,tip_length=0.3, tip_width=0.3)
         graph1 = axes.plot(lambda x: 0,x_range=[-3, 0],color=GREEN)
-        graph1 = Arrow(start=axes.c2p(0, 0),end=axes.c2p(-3, 0), buff=0,color=GREEN,stroke_width=4,tip_length=0.3)
+        graph1 = Arrow(start=axes.c2p(0, 0),end=axes.c2p(-3.5, 0), buff=0,color=GREEN,stroke_width=4,tip_length=0.3)
         graph2 = axes.plot(lambda x: x**2,x_range=[0, 2],color=RED)
         graph3 = axes.plot(lambda x: 4,x_range=[2, 7],color=BLUE)
         graph3=Arrow(start=axes.c2p(2, 4),end=axes.c2p(7,4), buff=0,color=BLUE,stroke_width=4,tip_length=0.3)
@@ -32,12 +34,12 @@ class Exercise957(Scene):
         dot2 = Dot(axes.c2p(2, 4),color="#D627F5")
         self.add(axes, graph1, graph2, graph3, dot1, dot2)
 
-        arrow1= Arrow(start=axes.c2p(1,-1),end=axes.c2p(1.8, -1),buff=0,color="#3527F5")
+        arrow1= Arrow(start=axes.c2p(1,-1),end=axes.c2p(1.8, -1),buff=0,color="#3527F5").shift(UP*0.2+RIGHT*0.20)
         label1=MathTex("2^-", color=BLACK).scale(0.5)
-        label1.next_to(arrow1.get_end(),DOWN, buff=0.13)
-        arrow2= Arrow(start=axes.c2p(3,-1),end=axes.c2p(2.2, -1),buff=0,color="#3527F5")
+        label1.next_to(arrow1.get_center(),DOWN, buff=0.13)
+        arrow2= Arrow(start=axes.c2p(3,-1),end=axes.c2p(2.2, -1),buff=0,color="#3527F5").shift(UP*0.2+RIGHT*0.20)
         label2=MathTex("2^+", color=BLACK).scale(0.5)
-        label2.next_to(arrow2.get_end(),DOWN, buff=0.1)
+        label2.next_to(arrow2.get_center(),DOWN+RIGHT*0.15, buff=0.1)
 
         self.add(arrow1,label1,arrow2,label2)
 
