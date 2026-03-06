@@ -11,13 +11,14 @@ class Example922(Scene):
     def construct(self):
 
         # Axes
-        axes=Axes(x_range=[-6,7,1],x_length=6,y_range=[-7,7,1],y_length=7,axis_config={"color":BLACK,"stroke_width":3.5},x_axis_config={"include_ticks": False},y_axis_config={"include_ticks": False},tips=False)
+        axes=Axes(x_range=[-6,7,1],x_length=6,y_range=[-7,7,1],y_length=7,axis_config={"color":BLACK,"stroke_width":3.2},x_axis_config={"include_ticks": False},y_axis_config={"include_ticks": False},tips=False)
         axes.x_axis.add_tip(tip_length=0.3,tip_width=0.3)
         axes.x_axis.add_tip(at_start=True,tip_length=0.3,tip_width=0.3)
         axes.y_axis.add_tip(tip_length=0.3,tip_width=0.3)
         axes.y_axis.add_tip(at_start=True,tip_length=0.3,tip_width=0.3)
 
-        line=DashedLine(axes.c2p(2,-6.60),axes.c2p(2,6.6),color="#45031C",stroke_width=4,dash_length=0.1).shift(RIGHT*0.1)
+        line=DashedLine(axes.c2p(2,-6.60),axes.c2p(2,-0.7),color="#45031C",stroke_width=2,dash_length=0.1).shift(RIGHT*0.1)
+        line2=DashedLine(axes.c2p(2,0),axes.c2p(2,6.6),color="#45031C",stroke_width=2,dash_length=0.1).shift(RIGHT*0.1)
 
         f=lambda x:1/((x-2)**3)
         y_top=axes.y_range[1]
@@ -33,7 +34,7 @@ class Example922(Scene):
         y1_label=MathTex("y'",color=BLACK).shift(DOWN*3.7+LEFT*0.1)
 
         two_label = MathTex("2",color=BLACK,font_size=30)
-        two_label.next_to(axes.c2p(2, 0),DOWN*0.3+RIGHT*0.1).set_z_index(10)
+        two_label.next_to(axes.c2p(2, 0),DOWN*0.35+RIGHT*0.1).set_z_index(10)
         zero_label=MathTex("0",color=BLACK,font_size=30)
         zero_label.next_to(axes.c2p(0,0),LEFT*0.3+DOWN*0.2)
 
@@ -41,9 +42,9 @@ class Example922(Scene):
 
         function_label=MathTex(r"f(x)=\frac{1}{(x-2)^3}",color=BLACK,font_size=25).to_edge(UP*4+RIGHT*8.9)
 
-        line_label=MathTex("x=2",color=BLACK,font_size=20).next_to(axes.c2p(2,-1),RIGHT*0.6)
+        line_label=MathTex("x=2",color=BLACK,font_size=30).next_to(axes.c2p(2,-1),RIGHT*0.6)
         
-        self.add(axes,x_label,y_label,x1_label,y1_label,function_label,zero_label,two_label ,line,left_curve,right_curve,line_label)
+        self.add(axes,x_label,y_label,x1_label,y1_label,function_label,zero_label,two_label ,line,line2,left_curve,right_curve,line_label)
         
         
         p_end = right_curve.get_end()
@@ -64,13 +65,13 @@ class Example922(Scene):
 
         arrow_1=Arrow(UP*3,DOWN*3,color="#09E363",stroke_width=4,tip_length=0.2).shift(DOWN*3.3+RIGHT*0.3).scale(0.1)
         arrow_2=Arrow(DOWN*3,UP*3,color="#09E363",stroke_width=4,tip_length=0.2).shift(UP*3.3+RIGHT*1.2).scale(0.1)
-        arrow_3=Arrow(LEFT*3,RIGHT*3,color="#ACE309",stroke_width=4,tip_length=0.25).shift(DOWN*0.3+RIGHT*-0.2).scale(0.3)
-        arrow_4=Arrow(RIGHT*3,LEFT*3,color="#ACE309",stroke_width=4,tip_length=0.25).shift(DOWN*0.3+RIGHT*1.8).scale(0.3)
-        label_1=MathTex("2^{-}",color=BLACK,font_size=20).shift(DOWN*0.45+RIGHT*0.2)
-        label_2=MathTex("2^{+}",color=BLACK,font_size=20).shift(DOWN*0.45+RIGHT*1.8)
-        label_3=MathTex(r"Approces\ -\infty",color=BLACK,font_size=20).shift(DOWN*3.6+RIGHT)
-        label_4=MathTex(r"Approces\ +\infty",color=BLACK,font_size=20).shift(UP*3.6+RIGHT*2)
-        hole=Circle(radius=0.15,color=BLUE,stroke_width=6)
+        arrow_3=Arrow(LEFT*3,RIGHT*3,color="#2754F5",stroke_width=4,tip_length=0.25).shift(DOWN*0.3+RIGHT*-0.2).scale(0.3)
+        arrow_4=Arrow(RIGHT*3,LEFT*3,color="#2754F5",stroke_width=4,tip_length=0.25).shift(DOWN*0.3+RIGHT*1.8).scale(0.3)
+        label_1=MathTex("2^{-}",color=BLACK,font_size=25).shift(DOWN*0.15+RIGHT*0.2)
+        label_2=MathTex("2^{+}",color=BLACK,font_size=25).shift(DOWN*0.15+RIGHT*1.5)
+        label_3=MathTex(r"\text{Approaches}\ -\infty",color=BLACK,font_size=20).shift(DOWN*3.6+RIGHT*1.1)
+        label_4=MathTex(r"\text{Approaches}\ +\infty",color=BLACK,font_size=20).shift(UP*3.6+RIGHT*2.1)
+        hole=Circle(radius=0.15,color=BLUE,stroke_width=4)
         hole.move_to(axes.c2p(2,0)).shift(DOWN*0.2+RIGHT*0.1)
         self.add(arrow_1,arrow_2,arrow_3,arrow_4,label_1,label_2,label_3,label_4,hole)
 
