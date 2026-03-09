@@ -26,6 +26,9 @@ class FourGraphs(Scene):
         y_label =MathTex("y", color=BLACK).next_to(axes1.y_axis.get_end(), UP)
         zero = MathTex("0", color=BLACK).scale(1)
         zero.next_to(axes1.c2p(0,0),DOWN+LEFT, buff=0.2)
+        x0 = 5
+        x0_label = MathTex("x_0", color=BLACK)
+        x0_label.next_to(axes1.c2p(x0, 0),DOWN,buff=0.2)
         
 
         def f(x):
@@ -47,7 +50,7 @@ class FourGraphs(Scene):
         dot2=Dot(color=PINK).scale(0.5)
         dot2.move_to(axes1.c2p(x0,x0)).shift(DOWN*0.77)
 
-        graph2 = VGroup(axes1,x_label,y_label,zero,curve,v_line,open_dot,dot,dot2).scale(0.8)
+        graph2 = VGroup(axes1,x0_label,x_label,y_label,zero,curve,v_line,open_dot,dot,dot2).scale(0.8)
 
 
         # ----------------GRAPH 3----------------

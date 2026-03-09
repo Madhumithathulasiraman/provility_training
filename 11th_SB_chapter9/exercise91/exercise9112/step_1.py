@@ -12,7 +12,7 @@ class ExerciseAnswer9112(Scene):
         self.camera.background_color = WHITE
 
         
-        axes=Axes(x_range=[-2.5,8,1],y_range=[-2.5,3,1],x_length=12,y_length=6,axis_config={"color":BLACK,"stroke_width":4,"include_ticks":True}).set_z_index(10)
+        axes=Axes(x_range=[-2.5,8,1],y_range=[-2.5,3,1],x_length=12,y_length=6,axis_config={"color":BLACK,"stroke_width":3.5,"include_ticks":True}).set_z_index(10)
         labels_right=VGroup(*[MathTex(str(i),font_size=35,color=BLACK).next_to(axes.c2p(i,0),DOWN*0.5+LEFT*0.1)for i in range(1,8)])
         labels_left=MathTex("-1",color=BLACK,font_size=35).next_to(axes.c2p(-1,0),DOWN*0.5)
         labels_left2=MathTex("-2",color=BLACK,font_size=35).next_to(axes.c2p(-2,0),DOWN*0.5)
@@ -31,8 +31,8 @@ class ExerciseAnswer9112(Scene):
         axes.y_axis.add_tip(at_start=True, tip_length=TIP_LEN)
 
         #labels
-        axis_label_1=MathTex("x",font_size=55,color=BLACK).next_to(axes.c2p(7.7,0),UP*1.5+RIGHT*1)
-        axis_label2=MathTex("x'",font_size=55,color=BLACK).next_to(axes.c2p(-3,0),UP*1.2+RIGHT*2)
+        axis_label_1=MathTex("x",font_size=55,color=BLACK).next_to(axes.c2p(7.5,0),UP*1.5+RIGHT*1)
+        axis_label2=MathTex("x'",font_size=55,color=BLACK).next_to(axes.c2p(-3.2,0),UP*1.2+RIGHT*2)
         axis_label_2=MathTex("y",font_size=55,color=BLACK).next_to(axes.c2p(0,3),RIGHT*1)
         axis_label=MathTex("y'",font_size=55,color=BLACK).next_to(axes.c2p(0,-3),UP*1.5+RIGHT)
         
@@ -55,11 +55,11 @@ class ExerciseAnswer9112(Scene):
         arrow_1=Arrow(LEFT*3,RIGHT*3,color="#800080",stroke_width=4,tip_length=0.15).shift(DOWN*1+RIGHT*1.9).scale(0.1)
         arrow_2=Arrow(RIGHT*3,LEFT*3,color="#800080",stroke_width=4,tip_length=0.15).shift(DOWN*-0.5+RIGHT*2.9).scale(0.1)
         
-        label_1=MathTex("5^{+}",color=BLACK,font_size=15)
-        label_2=MathTex("5^{-}",color=BLACK,font_size=15)
+        label_1=MathTex("5^{+}",color=BLACK,font_size=30)
+        label_2=MathTex("5^{-}",color=BLACK,font_size=30)
 
-        label_1.next_to(arrow_1.get_end(),LEFT*-0.01+UP*0.3)
-        label_2.next_to(arrow_2.get_end(),RIGHT*2.5+DOWN*0.01+UP*0.1)
+        label_1.next_to(arrow_1.get_end(),LEFT*0.5+UP*0.3)
+        label_2.next_to(arrow_2.get_end(),RIGHT*1.4+UP*0.3)
         self.add(arrow_1,arrow_2,label_1,label_2)
 
         zero_label = MathTex("0", color=BLACK,font_size=35)

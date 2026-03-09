@@ -29,12 +29,12 @@ class Exercise9571(Scene):
         brace3 = BraceBetweenPoints(line.n2p(1.6),line.n2p(4.8),direction=DOWN,color="#2754F5").shift(DOWN*0.4)
 
         #function labels
-        f1 = MathTex("f(x)=-(x+2)-(x-2)", color=BLACK).scale(0.5).next_to(brace1, DOWN*0.5)
+        f1 = MathTex("f(x)=-(x+2)-(x-1)", color=BLACK).scale(0.5).next_to(brace1, DOWN*0.5)
         f2 = MathTex("f(x)=(x+2)-(x-1)", color=BLACK).scale(0.5).next_to(brace2, DOWN*0.5)
         f3 = MathTex("f(x)=+(x+2)+(x-1)", color=BLACK).scale(0.5).next_to(brace3, DOWN*0.5)
         f4= MathTex("x<-2", color=BLACK).scale(0.6).next_to(brace1, UP*3.5)
         f5 = MathTex("-2<=x<1", color=BLACK).scale(0.6).next_to(brace2,UP*3.5)
-        f6 = MathTex("x>=1", color=BLACK).scale(0.6).next_to(brace3, UP*3.5)
+        f6 = MathTex("x<=1", color=BLACK).scale(0.6).next_to(brace3, UP*3.5)
 
      
         

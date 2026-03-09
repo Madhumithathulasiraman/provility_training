@@ -150,12 +150,12 @@ class Example937(Scene):
         self.add(pink_line)
         zero_label=MathTex("0",color=BLACK).scale(0.5)
         zero_label.next_to(axes.c2p(-1, -0.5),LEFT*0.2)
-        equation3=MathTex("xaxis",color=BLACK).shift(UP*8+RIGHT*1.11).scale(0.7)
-        arrow=Arrow(LEFT*0.5, RIGHT*0.5, buff=0, color=BLACK,tip_length=0.1).shift(UP*7.95+RIGHT*1.8).scale(0.5)
-        equation4=MathTex("Kg",color=BLACK).shift(UP*7.95+RIGHT*2.3).scale(0.7)
-        equation5=MathTex("yaxis",color=BLACK).shift(UP*7.5+RIGHT*1.11).scale(0.7)
-        arrow2=Arrow(LEFT*0.5, RIGHT*0.5, buff=0, color=BLACK,tip_length=0.1).shift(UP*7.5+RIGHT*1.8).scale(0.5)
-        equation6=MathTex("Cost",color=BLACK).shift(UP*7.5+RIGHT*2.47).scale(0.7)
+        equation3=MathTex((r"\text{x axis}"),color=BLACK).shift(UP*8+RIGHT*1.11).scale(0.7)
+        arrow=Arrow(LEFT*0.5, RIGHT*0.5, buff=0, color=BLACK,tip_length=0.1).shift(UP*7.95+RIGHT*1.84).scale(0.5)
+        equation4=MathTex(r"\mathrm{Kg}",color=BLACK).shift(UP*7.95+RIGHT*2.3).scale(0.7)
+        equation5=MathTex(r"\text{y axis}",color=BLACK).shift(UP*7.5+RIGHT*1.11).scale(0.7)
+        arrow2=Arrow(LEFT*0.5, RIGHT*0.5, buff=0, color=BLACK,tip_length=0.1).shift(UP*7.5+RIGHT*1.84).scale(0.5)
+        equation6=MathTex(r"\mathrm{Cost}",color=BLACK).shift(UP*7.5+RIGHT*2.47).scale(0.7)
         self.add(equation1,equation2,zero_label, equation3, arrow,equation4,equation5,arrow2,equation6)
         
         

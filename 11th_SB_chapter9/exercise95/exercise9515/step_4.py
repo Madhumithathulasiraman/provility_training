@@ -11,10 +11,10 @@ class ExerciseAnswer9515d(Scene):
         axes.x_axis.add_tip(at_start=True)
         axes.y_axis.add_tip(at_start=True)
 
-        x_label = MathTex("x",color=BLACK).next_to(axes.x_axis.get_end(),RIGHT)
-        y_label = MathTex("y",color=BLACK).next_to(axes.y_axis.get_end(),UP)
-        x_label1 = MathTex("x'",color=BLACK).next_to(axes.x_axis.get_start(),LEFT)
-        y_label1 = MathTex("y'",color=BLACK).next_to(axes.y_axis.get_start(),DOWN)
+        x_label = MathTex("x",color=BLACK).next_to(axes.x_axis.get_end(),RIGHT*0.1)
+        y_label = MathTex("y",color=BLACK).next_to(axes.y_axis.get_end(),UP*0.1)
+        x_label1 = MathTex("x'",color=BLACK).next_to(axes.x_axis.get_start(),LEFT*0.1)
+        y_label1 = MathTex("y'",color=BLACK).next_to(axes.y_axis.get_start(),DOWN*0.1)
 
         zero = MathTex("0",color=BLACK).scale(0.8)
         zero.next_to(axes.c2p(-0.2,0),DOWN+UP*0.5)
@@ -49,10 +49,10 @@ class ExerciseAnswer9515d(Scene):
         eq2 = MathTex(r"(ie)\lim_{x \to x_0^+}=f(x_0)\neq\lim_{x \to x_0^-} f(x)", color=BLACK).scale(0.5)
         
         group = VGroup(eq1,eq2).arrange(DOWN, aligned_edge=LEFT, buff=0.2)
-        box = SurroundingRectangle(group, color=BLACK, buff=0.1)
+        box = SurroundingRectangle(group, color=BLACK, buff=0.1,stroke_width=2.5)
         full_box = VGroup(box, group) 
         full_box.scale(0.9)  
         full_box.shift(UP*2.34+ RIGHT*1.5)
         self.add(full_box)
-        arrow = Arrow(DOWN,UP,buff=0,color=BLACK,stroke_width=3,tip_length=0.15).scale(0.55).shift(RIGHT*1.45+UP*1.25)
+        arrow = Arrow(DOWN,UP,buff=0,color=BLACK,stroke_width=2.5,tip_length=0.15).scale(0.55).shift(RIGHT*1.45+UP*1.25)
         self.add(arrow)

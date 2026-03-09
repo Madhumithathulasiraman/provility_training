@@ -18,8 +18,8 @@ class ExerciseAnswer9110(Scene):
        for tick in axes.x_axis.get_tick_marks():
             if tick.get_center()[0]<-4:   
                 tick.set_opacity(0)
-       axes.x_axis.add_tip(at_start=True)
-       axes.y_axis.add_tip(at_start=True)
+       axes.x_axis.add_tip(at_start=True,tip_length=0.4,tip_width=0.4)
+       axes.y_axis.add_tip(at_start=True,tip_length=0.4,tip_width=0.4)
        axes.x_axis.ticks.shift(LEFT*0.2)
        
        self.add(axes)
@@ -32,9 +32,9 @@ class ExerciseAnswer9110(Scene):
        self.add(start_arrow,end_arrow)
 
 
-       labels=axes.get_axis_labels(x_label=MathTex("x",color=BLACK),y_label=MathTex("y", color=BLACK))
-       x1_label=MathTex("x'", color=BLACK).next_to(axes.x_axis.get_start(),LEFT*0.2+UP*0.2)
-       y1_label=MathTex("y'", color=BLACK).next_to(axes.y_axis.get_start(),DOWN)
+       labels=axes.get_axis_labels(x_label=MathTex("x",color=BLACK),y_label=MathTex("y", color=BLACK)).shift(LEFT*0.2+DOWN*0.1)
+       x1_label=MathTex("x'", color=BLACK).next_to(axes.x_axis.get_start(),LEFT*-0+UP*0.75)
+       y1_label=MathTex("y'", color=BLACK).next_to(axes.y_axis.get_start(),DOWN*0+RIGHT*0.5)
        label_eq=MathTex("y=x^2+2",font_size=45,color=BLACK).move_to(UP*2.5+RIGHT*0.7)
        self.add(labels,x1_label,y1_label,label_eq)
 
