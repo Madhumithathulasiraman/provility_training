@@ -2,17 +2,21 @@ from manim import *
 
 config.background_color = WHITE
 config.frame_width=20
+config.pixel_width =3000
+config.pixel_height =3000
+
+config.frame_height = 8
 
 
 class FourGraphs(Scene):
     def construct(self):
 
-        # ----------------GRAPH 1----------------
+        #GRAPH 1
         q_image1 = ImageMobject("question1.png").scale(0.6)
         graph1 = Group(q_image1)
 
 
-        # ----------------GRAPH 2----------------
+        #GRAPH 2
         axes1 = Axes(
             x_range=[-1, 8, 1],
             y_range=[-1, 6, 1],
@@ -53,7 +57,7 @@ class FourGraphs(Scene):
         graph2 = VGroup(axes1,x0_label,x_label,y_label,zero,curve,v_line,open_dot,dot,dot2).scale(0.8)
 
 
-        # ----------------GRAPH 3----------------
+        #GRAPH 3
         axes2 = Axes(
             x_range=[-2.2, 5.8, 1],
             y_range=[-3.5,4, 1],
@@ -107,7 +111,7 @@ class FourGraphs(Scene):
         ).scale(0.8)
 
 
-        # ----------------GRAPH 4----------------
+        #GRAPH 4
         q_image2 = ImageMobject("question4.png").scale(0.6)
         graph4 = Group(q_image2)
 

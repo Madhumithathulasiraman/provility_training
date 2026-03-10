@@ -1,5 +1,10 @@
 from manim import *
 
+config.pixel_width =3000
+config.pixel_height =3000
+config.frame_width = 14
+config.frame_height = 8
+
 config.background_color=WHITE
 
 class ExerciseAnswer9515d(Scene):
@@ -32,11 +37,12 @@ class ExerciseAnswer9515d(Scene):
         self.add(axes,x_label,y_label,x_label1,y_label1,zero,x0_label,left_curve,right_curve,circle,dot,vertical)
 
         x0 = 2
-        y1 = 1.8
-        y2 = 1
+        y1 = 1.3
+        y2 = 3.6
         p1 = axes.c2p(x0, y1)
         p2 = axes.c2p(x0, y2)
-        brace = BraceBetweenPoints(p1, p2, direction=RIGHT,color=BLACK).shift(UP*0.8)
+        brace = BraceBetweenPoints(p1, p2, direction=RIGHT,color=BLACK).shift(UP*0.1+LEFT*0.05)
+        brace.scale([0.6, 0.4, 1]) 
         self.add(axes, brace)
         arrow = Arrow(start=LEFT *1,end=RIGHT *1,color=PINK,buff=0,tip_length=0.2).scale(0.5).shift(LEFT*0.1+UP*1)
         arrow2= Arrow(start=RIGHT *1,end=LEFT *1,color=BLUE,buff=0,tip_length=0.2).scale(0.5).shift(RIGHT*1.6+UP*0.1)
@@ -54,5 +60,5 @@ class ExerciseAnswer9515d(Scene):
         full_box.scale(0.9)  
         full_box.shift(UP*2.34+ RIGHT*1.5)
         self.add(full_box)
-        arrow = Arrow(DOWN,UP,buff=0,color=BLACK,stroke_width=2.5,tip_length=0.15).scale(0.55).shift(RIGHT*1.45+UP*1.25)
+        arrow = Arrow(DOWN,UP,buff=0,color=BLACK,stroke_width=2,tip_length=0.10).scale(0.54).shift(RIGHT*1.35+UP*1.29)
         self.add(arrow)

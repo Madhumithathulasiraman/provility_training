@@ -1,5 +1,10 @@
 from manim import *
 
+config.pixel_width =3000
+config.pixel_height =3000
+config.frame_width = 14
+config.frame_height = 8
+
 class ExerciseAnswer9515a(Scene):
     def construct(self):
         self.camera.background_color = WHITE
@@ -58,6 +63,7 @@ class ExerciseAnswer9515a(Scene):
         p1 = axes.c2p(x0, y1)
         p2 = axes.c2p(x0, y2)
         brace = BraceBetweenPoints(p1, p2, direction=RIGHT,color=BLACK).shift(UP*0.8)
+        brace.set_stroke(width=0.01)
         self.add(axes, brace)
 
         arrow = Arrow(start=LEFT * 2,end=RIGHT * 2,color=PINK,buff=0).scale(0.8).shift(LEFT*1+UP*0.7)

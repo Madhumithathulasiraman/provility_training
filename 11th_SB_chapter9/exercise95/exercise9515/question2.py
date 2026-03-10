@@ -2,6 +2,11 @@ from manim import *
 
 config.background_color = WHITE
 
+config.pixel_width =3000
+config.pixel_height =3000
+config.frame_width = 14
+config.frame_height = 8
+
 class Exercise9515b(Scene):
     def construct(self):
 

@@ -2,6 +2,9 @@ from manim import *
 
 config.background_color = WHITE
 config.frame_width=15
+config.pixel_width =3000
+config.pixel_height =3000
+config.frame_height = 8
 
 
 class ExerciseAnswer952(Scene):

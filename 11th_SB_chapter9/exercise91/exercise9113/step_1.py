@@ -3,6 +3,11 @@ import numpy as np
 
 config.background_color = WHITE
 
+config.pixel_width =3000
+config.pixel_height =3000
+config.frame_width = 14
+config.frame_height = 8
+
 class ExerciseAnswer9113(Scene):
     def construct(self):
         axes=Axes(x_range=[-1.9,2.5,1],y_range=[-1.5,1.5,1],axis_config={"color":BLACK},tips=True,x_axis_config={"include_numbers":False,"include_ticks": False,},y_axis_config={"include_numbers":False},)

@@ -1,6 +1,11 @@
 from manim import *
 import numpy as np
 
+config.pixel_width =3000
+config.pixel_height =3000
+config.frame_width = 14
+config.frame_height = 8
+
 config.background_color = WHITE
 
 class ExerciseAnswer9115c(Scene):
@@ -49,8 +54,8 @@ class ExerciseAnswer9115c(Scene):
         arrow_UP = Arrow(DOWN,UP,buff=0,color="#6F27F5",stroke_width=4,tip_length=0.2).scale(0.4).shift(UP*2.9+RIGHT*2.5)
         eq1= MathTex(r"\text{Approaches}+\infty",color=BLACK).scale(0.5).shift(UP*2.9+RIGHT*3.5)
         self.add(arrow_UP,eq1)
-        arrow = Arrow(start=LEFT * 1,end=RIGHT * 1,color="#C82009",buff=0,tip_length=0.3).scale(0.65).shift(RIGHT*-1+UP*0)
-        arrow2= Arrow(start=RIGHT * 1,end=LEFT * 1,color="#C82009",buff=0,tip_length=0.3).scale(0.65).shift(RIGHT*3.6+UP*1)
+        arrow = Arrow(start=LEFT * 1,end=RIGHT * 1,color="#C82009",buff=0,tip_length=0.2,stroke_width=4).scale(0.65).shift(RIGHT*-1+UP*0)
+        arrow2= Arrow(start=RIGHT * 1,end=LEFT * 1,color="#C82009",buff=0,tip_length=0.2,stroke_width=4).scale(0.65).shift(RIGHT*3.6+UP*1)
         label = MathTex("x_0^{-}", color=BLACK)
         label.next_to(arrow.get_center(),LEFT*-0+UP*0.5).scale(0.8)
         label1 = MathTex("x_0^{+}", color=BLACK)

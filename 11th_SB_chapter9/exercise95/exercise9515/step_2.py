@@ -1,5 +1,10 @@
 from manim import *
 
+config.pixel_width =3000
+config.pixel_height =3000
+config.frame_width = 14
+config.frame_height = 8
+
 config.background_color = WHITE
 
 class ExerciseAnswer9515b(Scene):
