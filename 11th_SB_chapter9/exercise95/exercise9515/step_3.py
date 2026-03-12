@@ -12,7 +12,7 @@ class ExerciseAnswer9115c(Scene):
     def construct(self):
 
         
-        axes = Axes(x_range=[-2.2, 5.5, 1],y_range=[-3.5,4, 1],x_length=10,y_length=7,axis_config={"color":BLACK,"stroke_width":3.5,"include_ticks":False},tips=False)
+        axes = Axes(x_range=[-2.2, 5.5, 1],y_range=[-3.5,4, 1],x_length=10,y_length=7,axis_config={"color":BLACK,"stroke_width":3.2,"include_ticks":False},tips=False)
         axes.x_axis.add_tip()
         axes.y_axis.add_tip()
         axes.x_axis.add_tip(at_start=True)
@@ -35,7 +35,7 @@ class ExerciseAnswer9115c(Scene):
         tip_right = Arrow(prev_point,end_point,buff=0,stroke_width=5,color="#F52742",tip_length=0.2,max_tip_length_to_length_ratio=2).shift(RIGHT*0.05)
         self.add(tip_right)
         
-        line= DashedLine(start=axes.c2p(3,-3.3),end=axes.c2p(3,3.5),color="#27E0F5",stroke_width=5,dash_length=0.15).shift(RIGHT*0.050)
+        line= DashedLine(start=axes.c2p(3,-3.3),end=axes.c2p(3,3.5),color="#27E0F5",stroke_width=5,dash_length=0.15).shift(RIGHT*0.050).set_z_index(10)
         label_dased=MathTex("x_0",color=BLACK)
         label_dased.next_to(line,RIGHT,buff=0).shift(DOWN*0.35+RIGHT*0.1)
         
@@ -72,9 +72,9 @@ class ExerciseAnswer9115c(Scene):
         full_box.scale(0.9)  
         full_box.shift(UP*1+ RIGHT*5.6)
         self.add(full_box,zero)
-        arrow_eq= Arrow(RIGHT,DOWN,buff=0,color=BLACK,stroke_width=2.5,tip_length=0.15).scale(1.9)
-        arrow_eq.rotate(152* PI / 180)
-        arrow_eq.shift(UP*0.7+RIGHT*2.6)
+        arrow_eq= Arrow(RIGHT,DOWN,buff=0,color=BLACK,stroke_width=2.5,tip_length=0.15).scale(1.85)
+        arrow_eq.rotate(155* PI / 180)
+        arrow_eq.shift(UP*0.72+RIGHT*2.52)
         self.add(arrow_eq)
         
         

@@ -10,7 +10,7 @@ config.background_color=WHITE
 class ExerciseAnswer9515d(Scene):
     def construct(self):
 
-        axes = Axes(x_range=[-3,5,1],y_range=[-1.9,5,1],x_length=8,y_length=5,axis_config={"color":BLACK,"include_ticks":False,"stroke_width":3.5},tips=False)
+        axes=Axes(x_range=[-3,5,1],y_range=[-1.9,5,1],x_length=8,y_length=5,axis_config={"color":BLACK,"include_ticks":False,"stroke_width":3},tips=False)
         axes.x_axis.add_tip()
         axes.y_axis.add_tip()
         axes.x_axis.add_tip(at_start=True)

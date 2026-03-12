@@ -10,7 +10,7 @@ class ExerciseAnswer9515a(Scene):
         self.camera.background_color = WHITE
 
        
-        axes = Axes(x_range=[-3, 5, 1],y_range=[-3, 10, 1],x_length=8,y_length=6,axis_config={"color":BLACK,"stroke_width":3.5,"include_ticks":False},tips=False)
+        axes = Axes(x_range=[-3, 5, 1],y_range=[-3, 10, 1],x_length=8,y_length=6,axis_config={"color":BLACK,"stroke_width":3,"include_ticks":False},tips=False)
         axes.x_axis.add_tip()
         axes.x_axis.add_tip(at_start=True)
         axes.y_axis.add_tip()

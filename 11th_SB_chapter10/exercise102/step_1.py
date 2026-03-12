@@ -9,9 +9,9 @@ config.pixel_height=2800
 class Exercise10220(Scene):
     def construct(self):
         
-        axes = Axes(x_range=[-3.9, 3.9, 1],y_range=[-10.9, 11.9, 2],axis_config={"include_tip": True,"color":BLACK,"tick_size": 0.07,"stroke_width":4,"tip_length": 0.2,"tip_width": 0.2},x_length=6,y_length=8,).add_coordinates()
-        x_label = MathTex("x", color=BLACK).next_to(axes.x_axis.get_end(), RIGHT)
-        y_label = MathTex("f(x)", color=BLACK).next_to(axes.y_axis.get_end(), UP)
+        axes = Axes(x_range=[-3.9, 3.9, 1],y_range=[-10.9, 11.9, 2],axis_config={"include_tip": True,"color":BLACK,"tick_size": 0.07,"stroke_width":3,"tip_length": 0.2,"tip_width": 0.2},x_length=6,y_length=8,).add_coordinates()
+        x_label = MathTex("x", color=BLACK).next_to(axes.x_axis.get_end(),RIGHT*0.5)
+        y_label = MathTex("f(x)", color=BLACK).next_to(axes.y_axis.get_end(),UP*0.5)
         graph = axes.plot(lambda x: 4*x - 5, x_range=[-1.3, 2.3],color="#9434CB")
         points = [axes.c2p(0, -5),axes.c2p(1, -1),axes.c2p(2, 3),axes.c2p(-1, -9)]
 
@@ -34,5 +34,6 @@ class Exercise10220(Scene):
                y_labels.add(label)
 
         self.add(x_labels, y_labels)
+        
 
         
