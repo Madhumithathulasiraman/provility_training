@@ -140,11 +140,11 @@ class Example937(Scene):
         x_arrow = Arrow(start=axes.c2p(130,-1.8),end=axes.c2p(150, -1.8),buff=0,color="#27D6F5",stroke_width=4,tip_length=0.3)
         self.add(x_label, x_arrow)
 
-        equation1=MathTex("y=0.16x,0<=x<100",color=BLACK).shift(UP*7+RIGHT*2.5).scale(0.7)
+        equation1=MathTex(r"y = 0.16x,\; 0 \le x < 100",color=BLACK).shift(UP*7+RIGHT*2.5).scale(0.7)
         green_line = Line(LEFT*0.3, RIGHT*0.3, color=GREEN, stroke_width=4.5)
         green_line.shift(UP*7+RIGHT*0.2)
         self.add(green_line)
-        equation2=MathTex("y=0.14x,x>=100",color=BLACK).shift(UP*6.5+RIGHT*2.2).scale(0.7)
+        equation2=MathTex(r"y = 0.14x,\; x \ge 100",color=BLACK).shift(UP*6.5+RIGHT*2.2).scale(0.7)
         pink_line = Line(LEFT*0.3, RIGHT*0.3, color=PINK, stroke_width=4.5)
         pink_line.shift(UP*6.5+RIGHT*0.2)
         self.add(pink_line)
