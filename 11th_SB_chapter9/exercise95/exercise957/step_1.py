@@ -33,8 +33,8 @@ class Exercise9571(Scene):
         f2 = MathTex("f(x)=x^2", color=BLACK).scale(0.8).next_to(brace2, DOWN)
         f3 = MathTex("f(x)=4", color=BLACK).scale(0.8).next_to(brace3, DOWN)
         f4= MathTex("x<0", color=BLACK).scale(0.6).next_to(brace1, UP*0.5)
-        f5 = MathTex("0<=x<2", color=BLACK).scale(0.6).next_to(brace2,UP*0.5)
-        f6 = MathTex("x>=2", color=BLACK).scale(0.6).next_to(brace3, UP*0.5)
+        f5 = MathTex(r"0 \le x < 2", color=BLACK).scale(0.6).next_to(brace2,UP*0.5)
+        f6 = MathTex(r"x \ge 2", color=BLACK).scale(0.6).next_to(brace3, UP*0.5)
 
      
         shift_amt = 0.6

@@ -21,11 +21,11 @@ class Exercise9515b(Scene):
         def f(x):
             return 0.15*(x-2.5)**2 +3
 
-        curve=axes.plot(f,x_range=[-1,7],color="#0055FF",stroke_width=4)
+        curve=axes.plot(f,x_range=[-1,7],color=PINK,stroke_width=4)
         x0=5
         y0=f(x0)
 
-        v_line =Line(axes.c2p(x0,0.1),axes.c2p(x0,3.6),color="#CCCC33",stroke_width=4)
+        v_line =Line(axes.c2p(x0,0.1),axes.c2p(x0,3.6),color="#701905",stroke_width=4)
         open_dot = Circle(radius=0.12, color="#FF3333",stroke_width=4)
         open_dot.set_fill(WHITE,opacity=1)
         open_dot.move_to(axes.c2p(x0, y0))

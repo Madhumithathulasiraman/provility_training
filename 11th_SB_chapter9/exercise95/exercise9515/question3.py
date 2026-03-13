@@ -27,7 +27,7 @@ class Exercise9115c(Scene):
         graph_right = axes.plot(func,x_range=[3.28,5.5],color="#2738F5",stroke_width=5)
 
         
-        line= DashedLine(start=axes.c2p(3,-3.5),end=axes.c2p(3,3.5),color="#9C2007",stroke_width=5,dash_length=0.15).shift(RIGHT*0.050)
+        line= DashedLine(start=axes.c2p(3,-3.5),end=axes.c2p(3,3.5),color=RED,stroke_width=5,dash_length=0.15).shift(RIGHT*0.050)
 
         
         label=MathTex("x = x_0", color=BLACK)

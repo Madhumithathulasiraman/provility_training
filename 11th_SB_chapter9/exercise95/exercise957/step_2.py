@@ -54,7 +54,7 @@ class Exercise957(Scene):
 
         parabola_label = MathTex("f(x) = x^2",color=BLACK).next_to(axes.c2p(0.2, 1.5)).scale(0.6).rotate(60 * DEGREES)
         horizontal_label = MathTex("f(x)= 4",color=BLACK).next_to(axes.c2p(3.2,3.7),UP).scale(0.6)
-        y_zero_label = MathTex("f(x)= 0",color=BLACK).next_to(axes.c2p(-2, 0),UP*2).scale(0.6)
+        y_zero_label = MathTex("f(x)= 0",color=BLACK).next_to(axes.c2p(-2, 0),UP*0.2).scale(0.6)
 
         self.add(parabola_label,horizontal_label,y_zero_label)
 

@@ -26,11 +26,11 @@ class ExerciseAnswer9515b(Scene):
         def f(x):
             return 0.15*(x-2.5)**2 +3
 
-        curve=axes.plot(f,x_range=[-1,7],color="#0055FF",stroke_width=4)
+        curve=axes.plot(f,x_range=[-1,7],color=PINK,stroke_width=4)
         x0=5
         y0=f(x0)
 
-        v_line =Line(axes.c2p(x0,0),axes.c2p(x0,4),color="#CCCC33",stroke_width=4)
+        v_line =Line(axes.c2p(x0,0),axes.c2p(x0,4),color="#701905",stroke_width=4)
         open_dot = Circle(radius=0.12, color=ORANGE,stroke_width=4)
         open_dot.set_fill(WHITE,opacity=1)
         open_dot.move_to(axes.c2p(x0, y0))
@@ -43,14 +43,14 @@ class ExerciseAnswer9515b(Scene):
 
         arrow = Arrow(start=LEFT * 1,end=RIGHT * 1,color=RED,buff=0,tip_length=0.2).scale(0.5).shift(RIGHT*1+UP*1.5)
         arrow2= Arrow(start=RIGHT * 1,end=LEFT * 1,color=RED,buff=0,tip_length=0.2).scale(0.5).shift(RIGHT*2.6+UP*1.5)
-        label = MathTex("x_0^{+}", color=BLACK)
+        label = MathTex("x_0^{-}", color=BLACK)
         label.next_to(arrow.get_center(),LEFT*0.1+UP*0.1).scale(0.8)
-        label1 = MathTex("x_0^{-}", color=BLACK)
+        label1 = MathTex("x_0^{+}", color=BLACK)
         label1.next_to(arrow2.get_center(),UP*0.01+RIGHT*0.1).scale(0.8)
         self.add(arrow,arrow2,label, label1)
         eq1 = MathTex( r"f(x) \neq f(x_0)", color=BLACK).scale(0.5)
         eq2 = MathTex( r"\text{But} \lim_{x \to x_0^{+}} f(x) \neq \lim_{x \to x_0^{-}} f(x)", color=BLACK).scale(0.5)
-        eq3=MathTex(r"\text{Not continuous at } x = x_0",color=BLACK).scale(0.5)
+        eq3=MathTex(r"\Rightarrow \text{Not continuous at } x = x_0",color=BLACK).scale(0.5)
         group = VGroup(eq1, eq2,eq3).arrange(DOWN, aligned_edge=LEFT, buff=0.2)
         box = SurroundingRectangle(group, color=BLACK, buff=0.1,stroke_width=2.5)
         full_box = VGroup(box, group) 

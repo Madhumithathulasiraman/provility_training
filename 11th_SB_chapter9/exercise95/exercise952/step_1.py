@@ -33,8 +33,8 @@ class Exercise9571(Scene):
         f2 = MathTex("f(x)=(x+2)-(x-1)", color=BLACK).scale(0.5).next_to(brace2, DOWN*0.5)
         f3 = MathTex("f(x)=+(x+2)+(x-1)", color=BLACK).scale(0.5).next_to(brace3, DOWN*0.5)
         f4= MathTex("x<-2", color=BLACK).scale(0.6).next_to(brace1, UP*3.5)
-        f5 = MathTex("-2<=x<1", color=BLACK).scale(0.6).next_to(brace2,UP*3.5)
-        f6 = MathTex("x<=1", color=BLACK).scale(0.6).next_to(brace3, UP*3.5)
+        f5 = MathTex(r"-2 \le x < 1", color=BLACK).scale(0.6).next_to(brace2,UP*3.5)
+        f6 = MathTex(r"x \ge 1", color=BLACK).scale(0.6).next_to(brace3, UP*3.5)
 
      
         
