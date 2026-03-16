@@ -1,6 +1,6 @@
 from manim import *
 
-from manim import*
+
 config.frame_height=10
 config.frame_width=15
 config.pixel_width=2500
@@ -9,12 +9,12 @@ config.background_color=WHITE
 
 class Exercise12511(Scene):
     def construct(self):
-
-        circle = Circle(radius=3.5,color=BLACK,stroke_width=4)
-        circle2 = Circle(radius=1.5,color=BLACK,stroke_width=4)
+        circle = Circle(radius=3.5,color="#090DC8",stroke_width=4)
+        circle2 = Circle(radius=1.5,color="#B809C8",stroke_width=4)
         label = Text("A", color=BLACK)
         label.move_to(circle.get_center())
         label2 = Text("B", color=BLACK)
-        label2.move_to(circle2).shift(RIGHT*3+UP)
-
+        label2.move_to(circle2).shift(RIGHT*2.8+UP)
         self.add(circle,circle2,label,label2)
+        equ=MathTex("A","\\subset","B",color=BLACK).shift(DOWN*4.2)
+        self.add(equ)
