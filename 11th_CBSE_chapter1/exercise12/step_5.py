@@ -24,7 +24,7 @@ class FlowerGraph(Scene):
             cx = r * np.cos(angle)
             cy = r * np.sin(angle)
             center = axes.c2p(cx, cy)
-            radius = np.linalg.norm(axes.c2p(0,0) - center)
+            radius = np.linalg.norm(axes.c2p(0,0)-center)
             circle = Circle(radius=radius,color=BLUE,stroke_width=4).move_to(center)
             circles.add(circle)
         self.add(axes, circles)
