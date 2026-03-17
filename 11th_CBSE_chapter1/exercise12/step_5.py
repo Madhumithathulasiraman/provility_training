@@ -14,7 +14,6 @@ class FlowerGraph(Scene):
         axes.x_axis.add_tip(tip_length=0.25,tip_width=0.25,at_start=True)
         axes.y_axis.add_tip(tip_length=0.25,tip_width=0.25)
         axes.y_axis.add_tip(tip_length=0.25,tip_width=0.25,at_start=True)
-
         x_label = MathTex("x",color=BLACK).next_to(axes.x_axis, RIGHT*0.1)
         y_label = MathTex("y",color=BLACK).next_to(axes.y_axis, UP*0.1)
         x1_label = MathTex("x'",color=BLACK).next_to(axes.x_axis, LEFT*0.1)
