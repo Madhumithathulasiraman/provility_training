@@ -46,7 +46,7 @@ class Step_1(Scene):
                 else:
                     merged.append(seg)
 
-            # ✅ DRAW WITH SHRINK FIX
+           
             for s1, s2 in merged:
                 eps = 0.01
                 start = base + (s1 + eps) * direction
